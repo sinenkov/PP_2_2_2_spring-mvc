@@ -20,7 +20,11 @@ public class CarServiceImpl implements CarService{
             cars.add(new Car(5,"UAZ","Patriot"));
         }
 
-        public List <Car> getCarList(){
-            return cars;
+    public List <Car> getCarList(int count){
+        if (count < 5){
+            cars = cars.subList(0,count);
         }
+
+        return cars;
+    }
 }
